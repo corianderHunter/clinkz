@@ -18,7 +18,7 @@ export default class ClinkzControl {
   }
 
   @Get("/pdf")
-  generatePdf(@Query("url") url, @Query("query") query, @Res res) {
+  generatePdf(@Query("url") url, @Query("selector") selector, @Res res) {
     if (!checkUri(url)) {
       return res.status(400).send("url is not invalid!");
     }
@@ -26,11 +26,14 @@ export default class ClinkzControl {
   }
 
   @Get("/word")
-  generateWord(@Query("url") url, @Query("query") query, @Res res) {
+  async generateWord(@Query("url") url, @Query("selector") selector, @Res res) {
     if (!checkUri(url)) {
       return res.status(400).send("url is not invalid!");
     }
-    return "generate word";
+    const filename = await this.service.generateWord(url, selector);
+    const dispositionHeader = buildDispositionHeader(path.basename(filename));
+    res.sendFile(filename, { headers: { ...dispositionHeader } });
+    return false;
   }
 
   @Get("/markdown")
