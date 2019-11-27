@@ -2,11 +2,13 @@ import ClinkzControl from "./control";
 import createApplication, { Module } from "express-zeus/decorators";
 import * as signale from "signale";
 import { name } from "../package.json";
+import ClinkzService from "./service";
 
 const appSignale = signale.scope(name);
 
 @Module({
-  controls: [ClinkzControl]
+  controls: [ClinkzControl],
+  services: [ClinkzService]
 })
 class AppModule {}
 
