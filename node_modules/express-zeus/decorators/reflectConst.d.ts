@@ -1,0 +1,12 @@
+export declare const REFLECT_CONTROL: unique symbol;
+export declare const REFLECT_SERVICE: unique symbol;
+export declare const REFLECT_IMPORT: unique symbol;
+export declare const REFLECT_PATH: unique symbol;
+export declare const REFLECT_METHOD: unique symbol;
+export declare const REFLECT_PARAM: unique symbol;
+export declare const REFLECT_MIDDLEWARE: unique symbol;
+export declare const REFLECT_CLASS_TYPE: unique symbol;
+export declare const REFLECT_CLASS_CONTROL_TYPE = "control";
+export declare const REFLECT_CLASS_SERVICE_TYPE = "service";
+export declare const REFLECT_CLASS_MODULE_TYPE = "module";
+export declare const REFLECT_INJECTS = "inject";
