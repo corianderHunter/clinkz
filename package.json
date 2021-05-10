@@ -19,7 +19,7 @@
     "bull": "^3.12.1",
     "express-zeus": "^1.5.2",
     "html-docx-js": "^0.3.1",
-    "lodash": "^4.17.15",
+    "lodash": "^4.17.21",
     "puppeteer": "^2.0.0",
     "signale": "^1.4.0",
     "ts-node": "^8.5.2",
